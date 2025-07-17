@@ -1,0 +1,147 @@
+/* Variables de color */
+:root {
+    --primary: #56a1d3;
+    --dark: #070f1b;
+    --light: #ecf0f1;
+    --gray: #8aa5a7;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: #fffefe;
+    color: var(--dark);
+}
+
+/* Layout principal con Grid */
+.cv-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(3, 3, 3, 0.1);
+}
+
+/* Sidebar (Flexbox) */
+.sidebar {
+    background: var(--dark);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+}
+
+.sidebar h3 {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sidebar i {
+    width: 20px;
+    color: var(--primary);
+}
+
+/* Contenido principal (Grid + Flexbox) */
+.main-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.main-content h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Experiencia y Educación (Flexbox) */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.timeline-item {
+    border-left: 3px solid var(--primary);
+    padding-left: 1rem;
+}
+
+.timeline-item ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Proyectos (Grid) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.project-card {
+    background: var(--light);
+    padding: 1rem;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card a {
+    color: var(--primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cv-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        order: 2;
+    }
+}
